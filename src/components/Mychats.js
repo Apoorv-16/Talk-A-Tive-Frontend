@@ -25,7 +25,7 @@ const Mychats = ({ fetchAgain }) => {
             },
           };
  
-          const {data} = await axios.get("https://talk-a-tive-backend-hoiy.onrender.com/api/chat", config);
+          const {data} = await axios.get(`${process.env.REACT_APP_backend_URL}/api/chat`, config);
           setChats(data);
 
     } catch(error){

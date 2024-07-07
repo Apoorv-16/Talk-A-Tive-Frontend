@@ -175,9 +175,10 @@ const Login = () => {
           "Content-type": "application/json",
         },
       };
+      console.log(`log from login page printing post request ${process.env.REACT_APP_backend_URL}`);
 
       const { data } = await axios.post(
-        "https://talk-a-tive-backend-hoiy.onrender.com/api/user/login",
+        `${process.env.REACT_APP_backend_URL}/api/user/login`,
         { email, password },
         config
       );

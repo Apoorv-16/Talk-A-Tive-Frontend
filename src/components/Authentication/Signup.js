@@ -261,7 +261,7 @@ const Signup = () => {
         },
       };
       const { data } = await axios.post(
-        "https://talk-a-tive-backend-hoiy.onrender.com/api/user",
+        `${process.env.REACT_APP_backend_URL}/api/user`,
         {
           name,
           email,

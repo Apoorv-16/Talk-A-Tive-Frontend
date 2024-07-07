@@ -78,7 +78,7 @@ function SideDrawer() {
         },
       };
 
-      const { data } = await axios.get(`https://talk-a-tive-backend-hoiy.onrender.com/api/user?search=${search}`, config);
+      const { data } = await axios.get(`${process.env.REACT_APP_backend_URL}/api/user?search=${search}`, config);
       console.log(data);
 
       setLoading(false);
@@ -106,7 +106,7 @@ function SideDrawer() {
           Authorization: `Bearer ${user.token}`,
         },
       };
-      const { data } = await axios.post(`https://talk-a-tive-backend-hoiy.onrender.com/api/chat`, { userId }, config);
+      const { data } = await axios.post(`${process.env.REACT_APP_backend_URL}/api/chat`, { userId }, config);
 
       if (!chats.find((c) => c._id === data._id)) setChats([data, ...chats]);
       setSelectedChat(data);
